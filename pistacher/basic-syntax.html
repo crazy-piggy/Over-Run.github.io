@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Pistacher Basic Syntax</title>
+    <link rel="stylesheet" href="../css/bgcolor.css">
+</head>
+<body>
+<h1>Pistacher Basic Syntax</h1>
+<p>一个 Pistacher 程序可以认为是一系列对象的集合，而这些对象通过调用彼此的方法来协同工作。下面简要介绍下类、对象、方法和实例变量的概念。</p>
+<ul>
+    <li>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
+    <li>类：类是一个模板，它描述一类对象的行为和状态。</li>
+    <li>方法：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。</li>
+    <li>实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
+</ul>
+<hr>
+<h2>第一个Pistacher程序</h2>
+<p>下面看一个简单的 Pistacher 程序，它将打印字符串 <i>Hello World</i></p>
+<table class="idea">
+    <tr>
+        <td><span class="keyword">class</span> <span class="normal">HelloWorld {</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/* 第一个Pistacher程序<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 它将打印字符串 Hello World<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+            </span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">static</span> <span class="method">main<span class="normal">() {</span></span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">println(<span class="string">"Hello World"</span>)<span class="keyword">;</span></span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">}<br>}</span>
+        </td>
+    </tr>
+</table><br>
+<p>下面将逐步介绍如何保存、编译以及运行这个程序：</p>
+<ul>
+    <li>打开代码编辑器，把上面的代码添加进去；</li>
+    <li>把文件名保存为：HelloWorld.pstc；</li>
+    <li>在<a href="https://github.com/Scope-Tech/PistacherComplier/issues" target="_blank" rel="noopener noreferrer">此处</a>提交Issue</li>
+    <li>等待完成</li>
+    <li>完成后下载编译好的pstclass文件，并且运行<span class="marked">java HelloWorld</span></li>
+</ul>
+<p>你将会在窗口看到 Hello World</p>
+<hr>
+<h2>基本语法</h2>
+<p>编写 Pistacher 程序时，应注意以下几点：</p>
+<ul>
+    <li><b>大小写敏感：</b>Pistacher 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的。</li>
+    <li><b>类名：</b>对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 <b>MyFirstPistacherClass</b> 。</li>
+    <li><b>方法名：</b>所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。</li>
+    <li><b>源文件名：</b>源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记 Pistacher 是大小写敏感的），文件名的后缀为 .pstc。（如果文件名和类名不相同则会导致编译错误）。</li>
+    <li><b>主方法入口：</b>所有的 Pistacher 程序由 <b>static main()</b> 方法开始执行。</li>
+</ul>
+<hr>
+<h2>Pistacher 标识符</h2>
+<p>Pistacher 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
+<p>关于 Pistacher 标识符，有以下几点需要注意：</p>
+<ul>
+    <li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</li>
+    <li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合</li>
+    <li>关键字不能用作标识符</li>
+    <li>标识符是大小写敏感的</li>
+    <li>合法标识符举例：age、$salary、_value、__1_value</li>
+    <li>非法标识符举例：123abc、-salary</li>
+</ul>
+<hr>
+<h2>Pistacher 修饰符</h2>
+<p>像其他语言一样，Pistacher可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</p>
+<ul>
+    <li>访问控制修饰符 : default, protected, private</li>
+    <li>非访问控制修饰符 : final, abstract, static, synchronized</li>
+</ul>
+<p>在后面的章节中我们会深入讨论 Pistacher 修饰符。</p>
+<hr>
+<h2>Pistacher 变量</h2>
+<p>Pistacher 中主要有如下几种类型的变量</p>
+<ul>
+    <li>局部变量</li>
+    <li>类变量（静态变量）</li>
+    <li>成员变量（非静态变量）</li>
+</ul>
+<hr>
+<h2>Pistacher 数组</h2>
+<p>数组是储存在堆上的对象，可以保存多个同类型变量。在后面的章节中，我们将会学到如何声明、构造以及初始化一个数组。</p>
+<hr>
+<h2>Pistacher 枚举</h2>
+<p>Pistacher引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的 bug。</p>
+<p>例如，我们为果汁店设计一个程序，它将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除了这三种尺寸外的果汁。</p>
+<h3>实例</h3>
+<table class="idea">
+    <tr>
+        <td>
+            <span class="keyword">default class </span><span class="normal">FreshJuice {</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">enum </span><span class="normal">FreshJuiceSize{ <span class="constant">SMALL</span><span class="keyword">, </span><span class="constant">MEDIUM</span><span class="keyword">, </span><span class="constant">LARGE </span><span class="normal">}</span></span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">FreshJuiceSize </span><span class="field">size</span><br>
+            <span class="normal">}</span><br><br>
+            <span class="keyword">class </span><span class="normal">FreshJuiceTest {</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">static</span> <span class="method">main<span class="normal">() {</span></span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">FreshJuice </span><span class="field">juice </span><span class="normal">= FreshJuice()</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">juice.<span class="field">size</span> = FreshJuice.FreshJuiceSize.<span class="constant">MEDIUM</span></span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">}</span><br>
+            <span class="normal">}</span>
+        </td>
+    </tr>
+</table>
+<p><b>注意：</b>枚举可以单独声明或者声明在类里面。方法、变量、构造函数也可以在枚举中定义。</p>
+</body>
+</html>
