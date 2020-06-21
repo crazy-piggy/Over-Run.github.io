@@ -1,6 +1,11 @@
 # idea
 
+
 .idea/
+
 *.iml
+
 *.ipr
+
 *.iws
+CrazyPointer/

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Pistacher Basic Syntax</title>
     <link rel="stylesheet" href="../css/bgcolor.css">
+    <link rel="stylesheet" type="text/css" href="../css/console.css">
 </head>
 <body>
-<h1>Pistacher Basic Syntax</h1>
+<h1 style="text-align:center;">Pistacher Basic Syntax</h1>
 <p>一个 Pistacher 程序可以认为是一系列对象的集合，而这些对象通过调用彼此的方法来协同工作。下面简要介绍下类、对象、方法和实例变量的概念。</p>
 <ul>
     <li>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
@@ -25,7 +26,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
             </span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">static</span> <span class="method">main<span class="normal">() {</span></span><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">println(<span class="string">"Hello World"</span>)<span class="keyword">;</span></span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">println(<span class="string">"Hello World"</span>)<span class="keyword"></span></span><br>
             &nbsp;&nbsp;&nbsp;&nbsp;<span class="normal">}<br>}</span>
         </td>
     </tr>
@@ -34,7 +35,7 @@
 <ul>
     <li>打开代码编辑器，把上面的代码添加进去；</li>
     <li>把文件名保存为：HelloWorld.pstc；</li>
-    <li>在<a href="https://github.com/Scope-Tech/PistacherComplier/issues" target="_blank" rel="noopener noreferrer">此处</a>提交Issue</li>
+    <li>在<a href="https://github.com/Scope-Tech/PistacherCompiler/issues" target="_blank" rel="noopener noreferrer">此处</a>提交Issue</li>
     <li>等待完成</li>
     <li>完成后下载编译好的pstclass文件，并且运行<span class="marked">java HelloWorld</span></li>
 </ul>
@@ -102,5 +103,245 @@
     </tr>
 </table>
 <p><b>注意：</b>枚举可以单独声明或者声明在类里面。方法、变量、构造函数也可以在枚举中定义。</p>
+<hr>
+<h2>Pistacher 关键字</h2>
+<p>下面列出了 Pistacher 关键字。这些保留字不能用于常量、变量、和任何标识符的名称。</p>
+<table class="reference">
+    <tr>
+        <th>类别</th>
+        <th>关键字</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td rowspan="3" align="center">访问控制</td>
+        <td>private</td>
+        <td>私有的</td>
+    </tr>
+    <tr>
+        <td>protected</td>
+        <td>受保护的</td>
+    </tr>
+    <tr>
+        <td>default </td>
+        <td>默认</td>
+    </tr>
+    <tr>
+        <td rowspan="11" align="center">类、方法和变量修饰符</td>
+        <td>abstract</td>
+        <td>声明抽象</td>
+    </tr>
+    <tr>
+        <td>class</td>
+        <td>类</td>
+    </tr>
+    <tr>
+        <td>final</td>
+        <td>最终值,不可改变的</td>
+    </tr>
+    <tr>
+        <td>interface</td>
+        <td>接口</td>
+    </tr>
+    <tr>
+        <td>native</td>
+        <td>本地，原生方法（非 Java 实现）</td>
+    </tr>
+    <tr>
+    <tr>
+        <td>static</td>
+        <td>静态</td>
+    </tr>
+    <tr>
+        <td>strictfp</td>
+        <td>严格,精准</td>
+    </tr>
+    <tr>
+        <td>synchronized</td>
+        <td>线程,同步</td>
+    </tr>
+    <tr>
+        <td>transient</td>
+        <td>短暂</td>
+    </tr>
+    <tr>
+        <td>volatile</td>
+        <td>易失</td>
+    </tr>
+    <tr>
+        <td rowspan="12" align="center">程序控制语句</td>
+        <td>break</td>
+        <td>跳出循环</td>
+    </tr>
+    <tr>
+        <td>case</td>
+        <td>定义一个值以供 switch 选择</td>
+    </tr>
+    <tr>
+        <td>continue</td>
+        <td>继续</td>
+    </tr>
+    <tr>
+        <td>default</td>
+        <td>默认</td>
+    </tr>
+    <tr>
+        <td>do</td>
+        <td>运行</td>
+    </tr>
+    <tr>
+        <td>else</td>
+        <td>否则</td>
+    </tr>
+    <tr>
+        <td>for</td>
+        <td>循环</td>
+    </tr>
+    <tr>
+        <td>if</td>
+        <td>如果</td>
+    </tr>
+    <tr>
+        <td>instanceof</td>
+        <td>实例</td>
+    </tr>
+    <tr>
+        <td>return</td>
+        <td>返回</td>
+    </tr>
+    <tr>
+        <td>switch</td>
+        <td>根据值选择执行</td>
+    </tr>
+    <tr>
+        <td>while</td>
+        <td>循环</td>
+    </tr>
+    <tr>
+        <td rowspan="6" align="center">错误处理</td>
+        <td>assert</td>
+        <td>断言表达式是否为真</td>
+    </tr>
+    <tr>
+        <td>catch</td>
+        <td>捕捉异常</td>
+    </tr>
+    <tr>
+        <td>finally</td>
+        <td>有没有异常都执行</td>
+    </tr>
+    <tr>
+        <td>throw</td>
+        <td>抛出一个异常对象</td>
+    </tr>
+    <tr>
+        <td>throws</td>
+        <td>声明一个异常可能被抛出</td>
+    </tr>
+    <tr>
+        <td>try</td>
+        <td>捕获异常</td>
+    </tr>
+    <tr>
+        <td rowspan="2" align="center">包相关</td>
+        <td>import</td>
+        <td>引入</td>
+    </tr>
+    <tr>
+        <td>package</td>
+        <td>包</td>
+    </tr>
+    <tr>
+        <td rowspan="8" align="center">基本类型</td>
+        <td>boolean</td>
+        <td>布尔型</td>
+    </tr>
+    <tr>
+        <td>byte</td>
+        <td>字节型</td>
+    </tr>
+    <tr>
+        <td>char</td>
+        <td>字符型</td>
+    </tr>
+    <tr>
+        <td>double</td>
+        <td>双精度浮点</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>单精度浮点</td>
+    </tr>
+    <tr>
+        <td>int</td>
+        <td>整型</td>
+    </tr>
+    <tr>
+        <td>long</td>
+        <td>长整型</td>
+    </tr>
+    <tr>
+        <td>short</td>
+        <td>短整型</td>
+    </tr>
+
+    <tr>
+        <td rowspan="2" align="center">变量引用</td>
+        <td>super</td>
+        <td>父类,超类</td>
+    </tr>
+    <tr>
+        <td>this</td>
+        <td>本类</td>
+    </tr>
+    <tr>
+        <td rowspan="3" align="center">保留关键字</td>
+        <td>goto</td>
+        <td>是关键字，但不能使用</td>
+    </tr>
+    <tr>
+        <td>const</td>
+        <td>是关键字，但不能使用</td>
+    </tr>
+    <tr>
+        <td>null</td>
+        <td>空</td>
+    </tr>
+</table>
+<hr>
+<h2>Pistacher 注释</h2>
+<p>类似于 Java，Pistacher 也支持单行以及多行注释。注释中的字符将被 PistacherCompiler 忽略。</p>
+<table class="idea">
+    <tr>
+        <td><span class="normal"><span class="keyword">class </span>HelloWorld {<br>
+            <span class="comment">
+                &nbsp;&nbsp;&nbsp; /* 这是第一个Pistacher程序<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; * 它将打印Hello World<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; * 这是一个多行注释的示例<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; */</span><br>
+            &nbsp;&nbsp;&nbsp; <span class="keyword">static </span><span class="method">main</span>() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="comment">// 这是单行注释的示例<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* 这个也是单行注释的示例 */
+            </span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; println(<span class="string">"Hello World"</span>)<br>
+            &nbsp;&nbsp;&nbsp; }<br>
+            }
+        </span></td>
+    </tr>
+</table>
+<hr>
+<h2>Pistacher 空行</h2>
+<p>空白行或者有注释的行，PistacherCompiler都会忽略掉。</p>
+<hr>
+<h2>继承</h2>
+<p>在 Pistacher 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。</p>
+<p>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。</p>
+<hr>
+<h2>接口</h2>
+<p>在 Pistacher 中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。</p>
+<p>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。</p>
+<hr>
+<p>下一节介绍 Pistacher 编程中的类和对象。之后你将会对 Pistacher 中的类和对象有更清楚的认识。</p>
+<span style="float:left;display:inline;"><a href="intro.html" target="_blank" rel="noopener noreferrer">← Pistacher Introduction</a></span>
+<span style="float:right;display:inline;"><a href="object-classes.html" target="_blank" rel="noopener noreferrer">Pistacher Object and Classes →</a></span>
 </body>
 </html>
