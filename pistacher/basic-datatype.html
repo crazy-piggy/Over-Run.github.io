@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pistacher Basic Datatype</title>
-    <link rel="stylesheet" type="text/css" href="../css/bgcolor.css">
-    <link rel="stylesheet" type="text/css" href="../css/console.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
 </head>
 <body>
 <h1>Pistacher Basic Datatype</h1>
@@ -16,6 +15,7 @@
 <ul><li>内置数据类型</li>
     <li>引用数据类型</li>
 </ul>
+<hr>
 <h2>内置数据类型</h2>
 <p>Pistacher语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。 </p>
 <p><strong>byte：</strong></p>
@@ -90,77 +90,394 @@
 </ul>
 <h3>实例</h3>
 <p>对于数值类型的基本类型的取值范围，我们无需强制去记忆，因为它们的值都已经以常量的形式定义在对应的包装类中了。请看下面的例子：</p>
-<table class="idea">
+
+<pre>
+    <table class="code">
+        <tr><td class="line"> 1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55</td>
+            <td><span class="keyword">class</span> PrimitiveTypeTest {
+    <span class="keyword">static</span> <span class="method">main</span>() {
+        <span class="comment">// byte</span>
+        println(<span class="string">"基本类型：byte 二进制位数："</span> + Byte.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Byte"</span>)
+        println(<span class="string">"最小值：Byte.MIN_VALUE="</span> + Byte.<span class="constant">MIN_VALUE</span>)
+        println(<span class="string">"最大值：Byte.MAX_VALUE="</span> + Byte.<span class="constant">MAX_VALUE</span>)
+        println()
+
+        <span class="comment">// short</span>
+        println(<span class="string">"基本类型：short 二进制位数："</span> + Short.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Short"</span>)
+        println(<span class="string">"最小值：Short.MIN_VALUE="</span> + Short.<span class="constant">MIN_VALUE</span>)
+        println(<span class="string">"最大值：Short.MAX_VALUE="</span> + Short.<span class="constant">MAX_VALUE</span>)
+        println()
+
+        <span class="comment">// int</span>
+        println(<span class="string">"基本类型：int 二进制位数："</span> + Integer.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Integer"</span>)
+        println(<span class="string">"最小值：Integer.MIN_VALUE="</span> + Integer.<span class="constant">MIN_VALUE</span>)
+        println(<span class="string">"最大值：Integer.MAX_VALUE="</span> + Integer.<span class="constant">MAX_VALUE</span>)
+        println()
+
+        <span class="comment">// long</span>
+        println(<span class="string">"基本类型：long 二进制位数："</span> + Long.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Long"</span>)
+        println(<span class="string">"最小值：Long.MIN_VALUE="</span> + Long.<span class="constant">MIN_VALUE</span>)
+        println(<span class="string">"最大值：Long.MAX_VALUE="</span> + Long.<span class="constant">MAX_VALUE</span>)
+        println()
+
+        <span class="comment">// float</span>
+        println(<span class="string">"基本类型：float 二进制位数："</span> + Float.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Float"</span>)
+        println(<span class="string">"最小值：Float.MIN_VALUE="</span> + Float.<span class="constant">MIN_VALUE</span>)
+        println(<span class="string">"最大值：Float.MAX_VALUE="</span> + Float.<span class="constant">MAX_VALUE</span>)
+        println()
+
+        <span class="comment">// double</span>
+        println(<span class="string">"基本类型：double 二进制位数："</span> + Double.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Double"</span>)
+        println(<span class="string">"最小值：Double.MIN_VALUE="</span> + Double.<span class="constant">MIN_VALUE</span>)
+        println(<span class="string">"最大值：Double.MAX_VALUE="</span> + Double.<span class="constant">MAX_VALUE</span>)
+        println()
+
+        <span class="comment">// char</span>
+        println(<span class="string">"基本类型：char 二进制位数："</span> + Character.<span class="constant">SIZE</span>)
+        println(<span class="string">"包装类：pstc.lang.Character"</span>)
+        <span class="comment">// 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台</span>
+        println(<span class="string">"最小值：Character.MIN_VALUE="</span>
+                + (<span class="keyword">int</span>) Character.<span class="constant">MIN_VALUE</span>)
+        <span class="comment">// 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台</span>
+        println(<span class="string">"最大值：Character.MAX_VALUE="</span>
+                + (<span class="keyword">int</span>) Character.<span class="constant">MAX_VALUE</span>)
+    }
+}</td>
+        </tr>
+    </table>
+</pre>
+<p>编译以上代码输出结果如下所示：</p>
+<pre><table class="console">
     <tr>
-        <td class="line">
-            1 <br>2 <br>3 <br>4 <br>5 <br>6 <br>7 <br>8 <br>9 <br>10<br>
-            11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>
-            21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>
-            31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>
-            41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>
-            51<br>52<br>53<br>54<br>55
-        </td>
+        <td>基本类型：byte 二进制位数：8
+包装类：pstc.lang.Byte
+最小值：Byte.MIN_VALUE=-128
+最大值：Byte.MAX_VALUE=127
+
+基本类型：short 二进制位数：16
+包装类：pstc.lang.Short
+最小值：Short.MIN_VALUE=-32768
+最大值：Short.MAX_VALUE=32767
+
+基本类型：int 二进制位数：32
+包装类：pstc.lang.Integer
+最小值：Integer.MIN_VALUE=-2147483648
+最大值：Integer.MAX_VALUE=2147483647
+
+基本类型：long 二进制位数：64
+包装类：pstc.lang.Long
+最小值：Long.MIN_VALUE=-9223372036854775808
+最大值：Long.MAX_VALUE=9223372036854775807
+
+基本类型：float 二进制位数：32
+包装类：pstc.lang.Float
+最小值：Float.MIN_VALUE=1.4E-45
+最大值：Float.MAX_VALUE=3.4028235E38
+
+基本类型：double 二进制位数：64
+包装类：pstc.lang.Double
+最小值：Double.MIN_VALUE=4.9E-324
+最大值：Double.MAX_VALUE=1.7976931348623157E308
+
+基本类型：char 二进制位数：16
+包装类：pstc.lang.Character
+最小值：Character.MIN_VALUE=0
+最大值：Character.MAX_VALUE=65535</td>
+    </tr>
+</table></pre>
+<p>Float和Double的最小值和最大值都是以科学记数法的形式输出的，结尾的"E+数字"表示E之前的数字要乘以10的多少次方。比如3.14E3就是3.14 × 10<sup>3</sup> =3140，3.14E-3 就是 3.14 x 10<sup>-3</sup> =0.00314。</p>
+<h3>类型默认值</h3>
+<p>下表列出了 Pistacher 各个类型的默认值：</p>
+<table class="pretty">
+    <tr>
+        <th><strong>数据类型</strong></th>
+        <th><strong>默认值</strong></th>
+    </tr>
+    <tr>
+        <td>byte</td>
+        <td>0</td>
+    </tr>
+    <tr class="alt">
+        <td>short</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>int</td>
+        <td>0</td>
+    </tr>
+    <tr class="alt">
+        <td>long</td>
+        <td>0L</td>
+    </tr>
+    <tr>
+        <td>float</td>
+        <td>0.0f</td>
+    </tr>
+    <tr class="alt">
+        <td>double</td>
+        <td>0.0d</td>
+    </tr>
+    <tr>
+        <td>char</td>
+        <td>'u0000'</td>
+    </tr>
+    <tr class="alt">
+        <td>String (or any object)</td>
+        <td>null</td>
+    </tr>
+    <tr>
+        <td>boolean</td>
+        <td>false</td>
+    </tr>
+</table>
+<pre>
+    <table class="code">
+        <tr><td class="line"> 1<br> 2<br> 3<br> 4<br> 5<br> 6<br> 7<br> 8<br> 9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23</td>
+            <td><span class="keyword">class</span> Test {
+    <span class="keyword">default static boolean</span> <span class="constant">bool</span>
+    <span class="keyword">default static byte</span> <span class="constant">by</span>
+    <span class="keyword">default static char</span> <span class="constant">ch</span>
+    <span class="keyword">default static double</span> <span class="constant">d</span>
+    <span class="keyword">default static float</span> <span class="constant">f</span>
+    <span class="keyword">default static int</span> <span class="constant">i</span>
+    <span class="keyword">default static long</span> <span class="constant">l</span>
+    <span class="keyword">default static short</span> <span class="constant">sh</span>
+    <span class="keyword">default static</span> String <span class="constant">str</span>
+
+    <span class="keyword">static</span> <span class="method">main</span>() {
+        println(<span class="string">"Bool :"</span> + <span class="constant">bool</span>)
+        println(<span class="string">"Byte :"</span> + <span class="constant">by</span>)
+        println(<span class="string">"Character:"</span> + <span class="constant">ch</span>)
+        println(<span class="string">"Double :"</span> + <span class="constant">d</span>)
+        println(<span class="string">"Float :"</span> + <span class="constant">f</span>)
+        println(<span class="string">"Integer :"</span> + <span class="constant">i</span>)
+        println(<span class="string">"Long :"</span> + <span class="constant">l</span>)
+        println(<span class="string">"Short :"</span> + <span class="constant">sh</span>)
+        println(<span class="string">"String :"</span> + <span class="constant">str</span>)
+    }
+}</td>
+        </tr>
+    </table>
+</pre>
+<p>实例输出结果为：</p>
+<pre><table class="console">
+    <tr>
+        <td>Bool     :false
+Byte     :0
+Character:
+Double   :0.0
+Float    :0.0
+Integer  :0
+Long     :0
+Short    :0
+String   :null</td>
+    </tr>
+</table></pre>
+<hr>
+<h2>引用类型</h2>
+<ul>
+    <li>
+        在Pistacher中，引用类型的变量与Java完全相同。引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型，比如 Employee、Puppy 等。变量一旦声明后，类型就不能被改变了。</li>
+    <li>
+        对象、数组都是引用数据类型。</li>
+    <li>
+        所有引用类型的默认值都是null。</li>
+    <li>
+        一个引用变量可以用来引用任何与之兼容的类型。</li>
+    <li>
+        例子：Site site = Site("Runoob")。</li>
+</ul>
+<hr>
+<h2>Pistacher 常量</h2>
+<p>常量在程序运行时是不能被修改的。</p>
+<p>在 Pistacher 中使用 final 关键字来修饰常量，声明方式和变量类似：</p>
+<table class="code">
+    <tr><td class="line">1</td>
+        <td><span class="keyword">final double </span><span class="field">PI</span> = <span class="number">3.1415927</span></td>
+    </tr>
+</table>
+<p>
+    虽然常量名也可以用小写，但为了便于识别，通常使用大写字母表示常量。
+</p>
+<p>字面量可以赋给任何内置类型的变量。例如：</p>
+<table class="code">
+    <tr>
+        <td class="line">1<br>2</td>
         <td>
-            <span class="normal">
-                <span class="keyword">class</span> PrimitiveTypeTest {<br>
-                &nbsp;&nbsp;&nbsp; <span class="keyword">static</span> <span class="method">main</span>() {<br>
-                &nbsp;&nbsp;&nbsp; <span class="comment">// byte</span> <br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：byte 二进制位数：<span class="keyword">$Byte.SIZE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Byte"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Byte.MIN_VALUE=<span class="keyword">$Byte.MIN_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Byte.MAX_VALUE=<span class="keyword">$Byte.MAX_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println()<br><br>
-
-                &nbsp;&nbsp;&nbsp; <span class="comment">// short</span> <br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：short 二进制位数：<span class="keyword">$Short.SIZE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Short"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Short.MIN_VALUE=<span class="keyword">$Short.MIN_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Short.MAX_VALUE="<span class="keyword">$Short.MAX_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println()<br><br>
-
-                &nbsp;&nbsp;&nbsp; <span class="comment">// int</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：int 二进制位数：<span class="keyword">$Integer.SIZE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Integer"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Integer.MIN_VALUE=<span class="keyword">$Integer.MIN_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Integer.MAX_VALUE=<span class="keyword">$Integer.MAX_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println()<br><br>
-
-                &nbsp;&nbsp;&nbsp; <span class="comment">// long</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：long 二进制位数：<span class="keyword">$Long.SIZE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Long"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Long.MIN_VALUE=<span class="keyword">$Long.MIN_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Long.MAX_VALUE=<span class="keyword">$Long.MAX_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println()<br><br>
-
-                &nbsp;&nbsp;&nbsp; <span class="comment">// float</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：float 二进制位数：<span class="keyword">$Float.SIZE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Float"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Float.MIN_VALUE=<span class="keyword">$Float.MIN_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Float.MAX_VALUE=<span class="keyword">$Float.MAX_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println()<br><br>
-
-                &nbsp;&nbsp;&nbsp; <span class="comment">// double</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：double 二进制位数：<span class="keyword">$Double.SIZE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Double"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Double.MIN_VALUE=<span class="keyword">$Double.MIN_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Double.MAX_VALUE=<span class="keyword">$Double.MAX_VALUE</span>"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println()<br><br>
-
-                &nbsp;&nbsp;&nbsp; <span class="comment">// char</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"基本类型：char 二进制位数：Character.SIZE"</span>)<br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"包装类：pstc.lang.Character"</span>)<br>
-                &nbsp;&nbsp;&nbsp; <span class="comment">// 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最小值：Character.MIN_VALUE="</span><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + (<span class="keyword">int</span>) Character.<span class="constant">MIN_VALUE</span>)<br>
-                &nbsp;&nbsp;&nbsp; <span class="comment">// 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台</span><br>
-                &nbsp;&nbsp;&nbsp; println(<span class="string">"最大值：Character.MAX_VALUE="</span><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + (<span class="keyword">int</span>) Character.<span class="constant">MAX_VALUE</span>)<br>
-                &nbsp;&nbsp;&nbsp; }<br>
-                }
-
-            </span>
+            <span class="keyword">byte </span><span class="field">a</span> = <span class="number">68</span><br>
+            <span class="keyword">char </span><span class="field">a</span> = <span class="string">'A'</span>
         </td>
     </tr>
 </table>
+<p>byte、int、long、和short都可以用十进制、16进制以及8进制的方式来表示。</p>
+<p>当使用常量的时候，前缀 <span class="marked">0</span> 表示 8 进制，而前缀 <span class="marked">0x</span> 代表 16 进制, 例如：</p>
+<table class="code">
+    <tr>
+        <td class="line">1<br>2<br>3</td>
+        <td>
+            <span class="keyword">int </span><span class="field">decimal</span> = <span class="number">100</span><br>
+            <span class="keyword">int </span><span class="field">octal</span> = <span class="number">0144</span><br>
+            <span class="keyword">int </span><span class="field">hexa</span> = <span class="number">0x64</span>
+        </td>
+    </tr>
+</table>
+<p>和其他语言一样，Pistacher的字符串常量也是包含在两个引号之间的字符序列。下面是字符串型字面量的例子：</p>
+<table class="code">
+    <tr>
+        <td class="line">1<br>2<br>3</td>
+        <td>
+            <span class="string">"Hello World"</span><br>
+            <span class="string">"two<span class="keyword">\n</span>lines"</span><br>
+            <span class="string">"<span class="keyword">\"</span>This is in quote<span class="keyword">\"</span>"</span>
+        </td>
+    </tr>
+</table>
+<p>字符串常量和字符常量都可以包含任何Unicode字符。例如：</p>
+<table class="code">
+    <tr>
+        <td class="line">1<br>2</td>
+        <td>
+            <span class="keyword">char </span><span class="field">a</span> = <span class="string">'<span class="keyword">\u0001</span>'</span><br>
+            String <span class="field">a</span> = <span class="string">"<span class="keyword">\u0001</span>"</span>
+        </td>
+    </tr>
+</table>
+<p>Pistacher语言支持一些特殊的转义字符序列。</p>
+<table class="pretty">
+    <tr>
+        <th>
+            符号</th>
+        <th>
+            字符含义</th>
+    </tr>
+    <tr>
+        <td>
+            \n</td>
+        <td>
+            换行 (0x0a)</td>
+    </tr>
+    <tr class="alt">
+        <td>
+            \r</td>
+        <td>
+            回车 (0x0d)</td>
+    </tr>
+    <tr>
+        <td>
+            \f</td>
+        <td>
+            换页符(0x0c)</td>
+    </tr>
+    <tr class="alt">
+        <td>
+            \b</td>
+        <td>
+            退格 (0x08)</td>
+    </tr>
+    <tr>
+        <td>
+            \0</td>
+        <td>
+            空字符 (0x0)</td>
+    </tr>
+    <tr class="alt">
+        <td>
+            \s</td>
+        <td>
+            空格 (0x20)</td>
+    </tr>
+    <tr>
+        <td>
+            \t</td>
+        <td>
+            制表符</td>
+    </tr>
+    <tr class="alt">
+        <td>
+            \"</td>
+        <td>
+            双引号</td>
+    </tr>
+    <tr>
+        <td>
+            \'</td>
+        <td>
+            单引号</td>
+    </tr>
+    <tr class="alt">
+        <td>
+            \\</td>
+        <td>
+            反斜杠</td>
+    </tr>
+    <tr>
+        <td>
+            \ddd</td>
+        <td>
+            八进制字符 (ddd)</td>
+    </tr>
+    <tr class="alt">
+        <td>
+            \uxxxx</td>
+        <td>
+            16进制Unicode字符 (xxxx)</td>
+    </tr>
+    <tr>
+        <td>
+            \$</td>
+        <td>
+            美元符
+        </td>
+    </tr>
+</table>
+<hr>
+<h2>自动类型转换</h2>
+<p><b>整型、实型（常量）、字符型数据可以混合运算。运算中，不同类型的数据先转化为同一类型，然后进行运算。</b></p>
+<p>转换从低级到高级。</p>
+<table class="code">
+    <tr>
+        <td>低  ------------------------------------>  高<br><br>
+            byte, short, char → int → long → float → double
+        </td>
+    </tr>
+</table>
+<p>数据类型转换必须满足如下规则：</p>
+<ul>
+    <li><p>1. 不能对boolean类型进行类型转换。</p> </li><li>
+    <p>2. 不能把对象类型转换成不相关类的对象。</p>  </li><li>
+    <p>3. 在把容量大的类型转换为容量小的类型时必须使用强制类型转换。</p>   </li><li>
+    <p>4. 转换过程中可能导致溢出或损失精度，例如：</p>
+    <table class="code">
+        <tr>
+            <td class="line">1<br>2<br></td>
+            <td>
+                <span class="keyword">int</span> <span class="field">i</span> = <span class="number">128</span><br>
+                <span class="keyword">byte</span> <span class="field">b</span> = (<span class="keyword">byte</span>)<span class="field">i</span>
+            </td>
+        </tr>
+    </table>
+    <p>因为 byte 类型是 8 位，最大值为127，所以当 int 强制转换为 byte 类型时，值 128 时候就会导致溢出。</p>
+</li>
+    <li>
+        <p>5. 浮点数到整数的转换是通过舍弃小数得到，而不是四舍五入，例如：  </p>
+        <table class="code">
+            <tr>
+                <td class="line">1<br>2<br></td>
+                <td>
+                    (<span class="keyword">int</span>)<span class="number">23.7</span> == <span class="number">23</span><br>
+                    (<span class="keyword">int</span>)<span class="number">-45.89f</span> == -<span class="number">45</span>
+                </td>
+            </tr>
+        </table>
+    </li>
+</ul>
+<h3>自动类型转换</h3>
+<p>必须满足转换前的数据类型的位数要低于转换后的数据类型，例如: short数据类型的位数为16位，就可以自动转换位数为32的int类型，同样float数据类型的位数为32，可以自动转换为64位的double类型。</p>
 </body>
 </html>
