@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="cmn-Hans">
+    <head>
+        <title>Index</title>
+        <link href="css/public.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <script text="type/javascript">
+            function switch1() {
+                e = document.getElementById("switch1");
+                if (e.style.display == 'none') {
+                    e.style.display = "block";
+                } else {
+                    e.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Index</h1>
+        <table style="border: 1px solid; width: 100%;">
+            <tr><th><h2>Article Archives</h2></th></tr>
+            <tr>
+                <th><button type="button" onclick="switch1()">2020</button></th>
+            </tr>
+            <tr style="display: block;" id="switch1">
+                <td><table>
+                    <tr>
+                        <th>2020-11</th>
+                    </tr>
+                    <tr>
+                        <td>28:
+                            <a href="blog/2020/11-28.html" target="_blank" rel="noopener noreferrer">
+                                Coordinator adds to game</a></td>
+                    </tr>
+                </table></td>
+            </tr>
+        </table>
+    </body>
+</html>
