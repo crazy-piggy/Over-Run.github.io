@@ -35,19 +35,24 @@ function initNav(activeId) {
                 <li>
                     <a href="https://over-run.github.io/tools/contrastchecker/" id="Atools-contrastchecker" target="_blank" rel="noopener noreferrer">对比度在线测试</a>
                 </li>
+                <li>
+                    <a href="https://over-run.github.io/mc2d/latest.html" id="Amc2d-latest" target="_blank" rel="noopener noreferrer">MC2D版本选择器</a>
+                </li>
             </ul>
         </li>
     </ul>
 `;
     getElementById('nav').className = 'nav';
-    for (let i = 0; i < activeId.length; i++) {
-        if (getElementById('A' + activeId[i]).href == document.URL) {
-            getElementById('A' + activeId[i]).href = '#';
-            getElementById('A' + activeId[i]).target = '';
-        }
-        getElementById('A' + activeId[i]).className = 'active';
-    }
     getElementById('nav').parentElement.style.marginTop = '46px';
+    for (let i = 0; i < activeId.length; i++) {
+        if (getElementById('A' + activeId[i]) != null){
+            if (getElementById('A' + activeId[i]).href == document.URL) {
+                getElementById('A' + activeId[i]).href = '#';
+                getElementById('A' + activeId[i]).target = '';
+            }
+            getElementById('A' + activeId[i]).className = 'active';
+        }
+    }
 }
 
 function getElementById(id) {

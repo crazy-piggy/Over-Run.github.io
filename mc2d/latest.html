@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="cmn-Hans">
+<head>
+    <title>MC2D版本选择器 - Over-Run</title>
+    <meta charset="utf-8">
+    <link href="../css/public.css" rel=stylesheet>
+    <script src="../js/public.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function gen() {
+        $.get('version_manifest.json', function(data) {
+            getElementById('latest').value = data.latest;
+            getElementById('stable').value = data.stable;
+        })
+    }
+    </script>
+</head>
+<body onload="initNav(['tools','mc2d-latest']);gen()">
+    <div id=nav></div>
+    <article>
+        <table class="pretty" style="width: 100%;">
+            <tr><th colspan=2>Minecraft2D版本选择器</th></tr>
+            <tr>
+                <td colspan=2>您可以在线选择Minecraft2D的版本并下载。<br>
+                    如果要尝鲜最新版本，请选择latest版本，<br>
+                    否则请选择stable版本。<br>
+                    不推荐您使用pre-alpha版本（虽然现在仍在pre-alpha阶段）。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table style="width: 100%;" class=pretty>
+                        <tr><th>版本</th></tr>
+                        <tr><td>
+                            <select id=ver style="width: 100%;">
+                                <option id=latest>latest</option>
+                                <option id=stable selected>stable</option>
+                                <optgroup label="pre-alpha">
+                                    <option value="0.2.0-all.jar">0.2.0</option>
+                                    <option value="0.1.0.40-all.jar">0.1.0</option>
+                                    <option value="200926.zip">200926</option>
+                                    <option value="200919.zip">200919</option>
+                                    <option value="200913.zip">200913</option>
+                                    <option value="200912.2.zip">200912+build.2</option>
+                                    <option value="200912.1.zip">200912+build.1</option>
+                                </optgroup>
+                            </select>
+                        </td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table style="width: 100%;" class=pretty>
+                        <tr><th>下载</th></tr>
+                        <tr>
+                            <td>
+                                <input onclick="download()" type="button" value="点击下载" style="border: 1px solid; border-radius: 5px; width: 100%;">
+                            </td>
+                        </tr>
+                        <script>
+                            function download() {
+                                o = getElementById('ver').selectedOptions[0];
+                                if (o.parentElement.tagName == 'OPTGROUP') {
+                                    window.open('version/' + o.parentElement.label + '/' + o.value);
+                                } else {
+                                    window.open('version/' + o.value);
+                                }
+                            }
+                        </script>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </article>
+</body>
+</html>
