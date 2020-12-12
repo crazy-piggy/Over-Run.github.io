@@ -9,10 +9,13 @@ function initNav(activeId) {
         <a href="https://over-run.github.io/blog/" id="Ablog" target="_blank" rel="noopener noreferrer">博客</a>
             <ul>
                 <li>
-                    <a href="https://over-run.github.io/blog/2020/" id="Ablog-2020" target="_blank" rel="noopener noreferrer">2020 (1)</a>
+                    <a href="https://over-run.github.io/blog/2020/" id="Ablog-2020" target="_blank" rel="noopener noreferrer">2020 (2)</a>
                     <ul>
                         <li>
                             <a href="https://over-run.github.io/blog/2020/11-28.html" id="Ablog-2020-11-28" target="_blank" rel="noopener noreferrer">11.28</a>
+                        </li>
+                        <li>
+                            <a href="https://over-run.github.io/blog/2020/12-12.html" id="Ablog-2020-12-12" target="_blank" rel="noopener noreferrer">12.12</a>
                         </li>
                     </ul>
                 </li>
@@ -38,6 +41,10 @@ function initNav(activeId) {
 `;
     getElementById('nav').className = 'nav';
     for (let i = 0; i < activeId.length; i++) {
+        if (getElementById('A' + activeId[i]).href == document.URL) {
+            getElementById('A' + activeId[i]).href = '#';
+            getElementById('A' + activeId[i]).target = '';
+        }
         getElementById('A' + activeId[i]).className = 'active';
     }
     getElementById('nav').parentElement.style.marginTop = '46px';

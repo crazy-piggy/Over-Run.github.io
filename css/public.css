@@ -1,3 +1,9 @@
+.info {
+    font-size: x-small;
+    font-style: italic;
+    font-family: 'Segoe UI';
+}
+
 body {
     background-color: #f6f6f6;
     margin: 0px;
