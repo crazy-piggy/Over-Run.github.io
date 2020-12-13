@@ -11,6 +11,8 @@
         $.get('version_manifest.json', function(data) {
             getElementById('latest').value = data.latest;
             getElementById('stable').value = data.stable;
+            getElementById('l').innerHTML = data.latest;
+            getElementById('s').innerHTML = data.stable;
         })
     }
     </script>
@@ -36,13 +38,16 @@
                                 <option id=latest>latest</option>
                                 <option id=stable selected>stable</option>
                                 <optgroup label="pre-alpha">
-                                    <option value="0.2.0-all.jar">0.2.0</option>
-                                    <option value="0.1.0.40-all.jar">0.1.0</option>
-                                    <option value="200926.zip">200926</option>
-                                    <option value="200919.zip">200919</option>
-                                    <option value="200913.zip">200913</option>
-                                    <option value="200912.2.zip">200912+build.2</option>
-                                    <option value="200912.1.zip">200912+build.1</option>
+                                    <option value="pre-alpha/0.2.0-all.jar">0.2.0</option>
+                                    <option value="pre-alpha/0.1.0.40-all.jar">0.1.0</option>
+                                    <option value="pre-alpha/200926.zip">200926</option>
+                                    <option value="pre-alpha/200919.zip">200919</option>
+                                    <option value="pre-alpha/200913.zip">200913</option>
+                                    <option value="pre-alpha/200912.2.zip">200912+build.2</option>
+                                    <option value="pre-alpha/200912.1.zip">200912+build.1</option>
+                                </optgroup>
+                                <optgroup label="kotlin-edition">
+                                    <option value="pre-alpha/kt-0.1.0-all.jar">0.1.0</option>
                                 </optgroup>
                             </select>
                         </td></tr>
@@ -58,12 +63,7 @@
                         </tr>
                         <script>
                             function download() {
-                                o = getElementById('ver').selectedOptions[0];
-                                if (o.parentElement.tagName == 'OPTGROUP') {
-                                    window.open('version/' + o.parentElement.label + '/' + o.value);
-                                } else {
-                                    window.open('version/' + o.value);
-                                }
+                                window.open('version/' + getElementById('ver').selectedOptions[0].value);
                             }
                         </script>
                     </table>
@@ -76,13 +76,14 @@
                         <tr><td>
                             <table class=pretty style="width: 100%;">
                                 <tr><th>阶段</th><th>版本号</th><th>日期</th><th>大小</th></tr>
-                                <tr><td rowspan="7">Pre-Alpha</td><td>200912-pa-build.1</td><td>2020.09.12</td><td>49.66 KB</td></tr>
+                                <tr><td rowspan="8">Pre-Alpha</td><td>200912-pa-build.1</td><td>2020.09.12</td><td>49.66 KB</td></tr>
                                 <tr><td>200912-pa-build.2</td><td>2020.09.12</td><td>50.42 KB</td></tr>
                                 <tr><td>200913-pa-build.0</td><td>2020.09.13</td><td>57.70 KB</td></tr>
                                 <tr><td>200919-pa-build.0</td><td>2020.09.19</td><td>63.96 KB</td></tr>
                                 <tr><td>200926-pa-build.0</td><td>2020.09.26</td><td>64.15 KB</td></tr>
                                 <tr><td>0.1.0.40-pre-alpha</td><td>2020.10.15</td><td>21.83 MB</td></tr>
                                 <tr><td>0.2.0</td><td>2020.12.12</td><td>30.90 MB</td></tr>
+                                <tr><td>kt-0.1.0</td><td>2020.12.13</td><td>32.56 MB</td></tr>
                             </table>
                         </td></tr>
                     </table>
@@ -91,6 +92,8 @@
                     <table class=pretty style="width: 100%;">
                         <tr><th>API</th></tr>
                         <tr><td>
+                            最新版本：<span id="l"></span><br>
+                            稳定版本：<span id="s"></span><br>
                             <a href="version_manifest.json" target="_blank" rel="noopener noreferrer">JSON</a>
                         </td></tr>
                     </table>
